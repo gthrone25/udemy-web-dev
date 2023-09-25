@@ -1,0 +1,17 @@
+img {
+    width: 30%;
+    /* 10% of screen left */
+    margin: 1.6666667%;
+    /* easier options than the above */
+    margin: calc(10%/6);
+}
+
+nav {
+    font-family: Raleway, sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f1f1;
+    width: 30%;
+    margin-left: calc(10%/6);
+    padding: 1.2em 0px;
+}
