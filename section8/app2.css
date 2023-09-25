@@ -1,0 +1,28 @@
+h1 {
+    background-color: yellow;
+    border: 1px black solid;
+    width: 500px;
+    height: 200px;
+    padding: 50px;
+    margin: 50px;
+
+}
+
+span {
+    background-color: palegreen;
+    border: 1px solid black;
+    width: 500px;
+    padding: 100px;
+    margin: 50px;
+    display: block;
+}
+
+div {
+    background-color: olive;
+    border: 5px solid black;
+    width: 200px;
+    padding: 200px;
+    margin: 50px;
+    display: inline-block;
+    /* display: none; */
+}
