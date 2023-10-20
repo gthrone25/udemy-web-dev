@@ -1,0 +1,37 @@
+use animalShelter;
+
+show collections
+
+db.dogs.insertOne({name: "Charlie", age: 3, breed: "corgi", catFriendly: true})
+
+db.dogs.find();
+
+db.dogs.insert([{name: "wyatt", breed: "Golden", age: 14, catFriendly: false} , {name: "Tonya", breed: "Chihuahua", age: 17, catFriendly: true}]);
+
+db.cats.insert({name: "Blue Steele", age: 6, dogFriendly: false, breed: 'Scottish fold'});
+
+db.dogs.find({breed: "corgi"})
+
+db.dogs.find({catFriendly: true})
+
+db.dogs.findOne({catFriendly: true})
+
+db.dogs.updateOne({name: 'Charlie'}, {$set: {age: 4}})
+
+db.dogs.updateOne({name: 'Charlie'}, {$set: {color: "chocoloate"}})
+
+db.dogs.updateMany({catFriendly: true}, {$set: {isAvailable: true}})
+
+db.cats.updateOne({age:6}, {$set: {age:7}, $currentDate: {lastChanged: true}});
+
+db.cats.deleteOne({name: 'Blue Steele'});
+
+db.dogs.deleteMany({isAvailable: true});
+
+db.dogs.find({age: {$gt: 8}})
+
+db.dogs.find({breed: {$in: ['Mutt', 'Corgi']}})
+
+db.dogs.find({breed: {$in: ['Mutt', 'Corgi']}, age: {$lte : 10}})
+
+db.dogs.find({$or: [{'personality.catFriendly': true}, {age: {$lte: 2}}]})
