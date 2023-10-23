@@ -59,3 +59,5 @@ Movie.deleteMany({ year: { $gte: 1999 } }).then(msg => console.log(msg))
 
 Movie.findOneAndDelete({ title: 'Alien' }).then(m => console.log(m))
 
+
+
