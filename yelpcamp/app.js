@@ -35,7 +35,7 @@ console.log(dbUrl)
 const MongoStore = require('connect-mongo');
 
 
-mongoose.connect(dbUrl, {
+mongoose.connect(dbLocal, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -56,20 +56,20 @@ app.use(mongoSanitize({
     replaceWith: '_'
 }));
 
-const store = MongoStore.create({
-    mongoUrl: dbUrl,
-    touchAfter: 24 * 60 * 60,
-    crypto: {
-        secret: 'thisshouldbeabettersecret!'
-    }
-});
+// const store = MongoStore.create({
+//     mongoUrl: dbLocal,
+//     touchAfter: 24 * 60 * 60,
+//     crypto: {
+//         secret: 'thisshouldbeabettersecret!'
+//     }
+// });
 
-store.on("error", function (e) {
-    console.log("Session store error", e)
-});
+// store.on("error", function (e) {
+//     console.log("Session store error", e)
+// });
 
 const sessionConfig = {
-    store,
+    // store,
     name: 'session',
     secret: 'thisshouldbeabettersecret',
     resave: false,
